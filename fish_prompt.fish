@@ -3,7 +3,7 @@ function fish_prompt
   # Cache exit status
   set -l last_status $status
 
-  # Set color for variables for prompt
+  # Set color for variables in prompt
   set -l normal (set_color normal)
   set -l white (set_color FFFFFF)
   set -l turquoise (set_color 5fdfff)
@@ -30,15 +30,14 @@ function fish_prompt
     set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
   end
   if not set -q __fish_prompt_char
-    switch (id -u)
-      case 0
-        set -g __fish_prompt_char (set_color red)'λ'(set_color normal)
-      case '*'
-        set -g __fish_prompt_char 'λ'
+    if [ (id -u) -eq 0 ]
+      set -g __fish_prompt_char (set_color red)'λ'(set_color normal)
+    else  
+      set -g __fish_prompt_char 'λ'
     end
   end
 
-  if test (id -u) = 0 # check if `root`
+  if [ (id -u) -eq 0 ]
     # Line 1 -- Superuser
     echo -n $red'╭─'$hotpink$USER$red' at '$orange$__fish_prompt_hostname$red' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
