@@ -37,9 +37,17 @@ function fish_prompt
     end
   end
 
+  # set -g location at
+
+  if [ "$SSH_TTY" = "" ]
+    set -g location at
+  else
+    set -g location ssh
+  end
+
   if [ (id -u) -eq 0 ]
     # Line 1 -- Superuser
-    echo -n $red'╭─'$hotpink$USER$red' at '$orange$__fish_prompt_hostname$red' in '$limegreen(pwd)$turquoise
+    echo -n $red'╭─'$hotpink$USER$red' '$location' '$orange$__fish_prompt_hostname$red' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
     echo
     # Line 2 -- Superuser
@@ -47,7 +55,7 @@ function fish_prompt
     echo -n $red'─'$__fish_prompt_char $normal
   else # check - everyone else
     # Line 1
-    echo -n $white'╭─'$hotpink$USER$white' at '$orange$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
+    echo -n $white'╭─'$hotpink$USER $white$location $orange$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
     echo
     # Line 2
