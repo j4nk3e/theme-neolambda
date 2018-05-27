@@ -36,9 +36,8 @@ function fish_prompt
       set -g __fish_prompt_char 'λ'
     end
   end
-
-  # set -g location at
-
+  
+  # change `at` to `ssh` when an interactive ssh session is present
   if [ "$SSH_TTY" = "" ]
     set -g location at
   else
