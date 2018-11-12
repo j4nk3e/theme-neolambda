@@ -25,7 +25,7 @@ function fish_prompt
   set -g __fish_git_prompt_showstashstate true
   set -g __fish_git_prompt_show_informative_status true 
 
-  # Just calculate these once, to save a few cycles when displaying the prompt
+  # Only calculate once, to save a few CPU cycles when displaying the prompt
   if not set -q __fish_prompt_hostname
     set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
   end
@@ -58,7 +58,7 @@ function fish_prompt
     echo -n $red'─'$__fish_prompt_char $normal
   else # check - everyone else
     # Line 1
-    echo -n $white'╭─'$hotpink$USER $white$location $orange$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
+    echo -n $white'╭─'$hotpink$USER $white$location $blue$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
     echo
     # Line 2
