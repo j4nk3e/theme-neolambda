@@ -42,7 +42,7 @@ function fish_prompt
     set -g location at
   else
     if [ "$TERM" = "xterm-256color-italic" -o "$TERM" = "tmux-256color" ]
-      set -g location "\e[3m ssh \e[23m"
+      set -g location (echo -e "\e[3m ssh \e[23m")
     else
       set -g location ssh
     end
