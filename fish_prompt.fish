@@ -58,7 +58,7 @@ function fish_prompt
     echo -n $red'─'$__fish_prompt_char $normal
   else # check - everyone else
     # Line 1
-    echo -n $white'╭─'$hotpink$USER $white$location $blue$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
+    echo -n $white'╭─'$hotpink$USER $white$location $orange$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
     echo
     # Line 2
