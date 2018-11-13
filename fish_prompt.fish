@@ -46,7 +46,7 @@ function fish_prompt
     if [ "$TERM" = "xterm-256color-italic" -o "$TERM" = "tmux-256color" ]
       set -g location (echo -e "\e[3mssh\e[23m")
       # set -g ssh_hostname (echo -e $blue$__fish_prompt_hostname)
-      set -g __fish_prompt_hostname $bule(hostname|cut -d . -f 1)(set_color normal)
+      set -g __fish_prompt_hostname $blue(hostname|cut -d . -f 1)(set_color normal)
     else
       set -g location ssh
       # set -g ssh_hostname (echo -e $blue$__fish_prompt_hostname)
