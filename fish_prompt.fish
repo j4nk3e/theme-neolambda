@@ -50,7 +50,7 @@ function fish_prompt
 
   if [ (id -u) -eq 0 ]
     # Line 1 -- Superuser
-    echo -n $red'╭─'$hotpink$USER $red$location $orange$__fish_prompt_hostname$red' in '$limegreen(pwd)$turquoise
+    echo -n $red'╭─'$hotpink$USER $location $blue$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
     echo
     # Line 2 -- Superuser
