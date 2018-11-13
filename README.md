@@ -15,7 +15,7 @@
 
 <details>
 <summary>An animated GIF deoming some of the features provided by this theme</summary>
-<img src="https://i.imgur.com/qgKd2HV.gifv"/>
+<img src="https://i.imgur.com/qgKd2HV.gif" width="640">
 </details>
 <br>
 <br>
