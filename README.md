@@ -17,7 +17,8 @@
 <summary>An animated GIF deoming some of the features provided by this theme</summary>
 <img src="https://i.imgur.com/qgKd2HV.gifv"/>
 </details>
-
+<br>
+<br>
 
 > To avoid [double printing](https://raw.githubusercontent.com/ipatch/theme-lambda/master/lib/virtualenv-double-prompt.png) of the virtualenv name in prompt add the below to `config.fish`
 
