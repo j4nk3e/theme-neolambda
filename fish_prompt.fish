@@ -40,29 +40,32 @@ function fish_prompt
   # change `at` to `ssh` when an interactive ssh session is present
   if [ "$SSH_TTY" = "" ]
     set -g location at
-  else
+    set -g __fish_prompt_hostname (set_color orange)(hostname|cut -d . -f 1)
+  else # connected via ssh
     if [ "$TERM" = "xterm-256color-italic" -o "$TERM" = "tmux-256color" ]
       set -g location (echo -e "\e[3mssh\e[23m")
-      $blue__fish_prompt_hostname
+      # set -g ssh_hostname (echo -e $blue$__fish_prompt_hostname)
+      set -g __fish_prompt_hostname (set_color blue)(hostname|cut -d . -f 1)
     else
       set -g location ssh
+      # set -g ssh_hostname (echo -e $blue$__fish_prompt_hostname)
+      set -g __fish_prompt_hostname (set color blue)(hostname|cut -d . -f 1)
     end
   end
 
   if [ (id -u) -eq 0 ]
-    # Line 1 -- Superuser
-    echo -n $red'╭─'$hotpink$USER $location $blue$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
+    # top line > Superuser
+    echo -n $red'╭─'$hotpink$USER $location $__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
     echo
-    # Line 2 -- Superuser
+    # bottom line > Superuser
     echo -n $red'╰'
     echo -n $red'─'$__fish_prompt_char $normal
-  else # check - everyone else
-    # Line 1
-    echo -n $white'╭─'$hotpink$USER $white$location $orange$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
+  else # top line > non superuser's
+    echo -n $white'╭─'$hotpink$USER $white$location $__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
     echo
-    # Line 2
+    # bottom line > non superuser's
     echo -n $white'╰'
     echo -n $white'─'$__fish_prompt_char $normal
   end
