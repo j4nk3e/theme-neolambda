@@ -41,4 +41,4 @@ omf install neolambda
 ## TODOs
 
 - [ ] experiment with creating an animated svg to replace / complement the animaged gif
-  - `cat myrecrod.cast | svg-term --out myrecord.svg --window`
+  `cat myrecrod.cast | svg-term --out myrecord.svg --window`
