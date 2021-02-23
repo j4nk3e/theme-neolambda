@@ -15,7 +15,8 @@ function fish_right_prompt
   end
   printf ' (%s)' (__print_duration $cmd_duration)
   set_color 666666
-  printf ' < %s' (date +%H:%M:%S)
+  # NOTE: ipatch, date taking too much space
+  # printf ' < %s' (date +%H:%M:%S)
   set_color normal
 end
 
