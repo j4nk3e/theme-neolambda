@@ -1,14 +1,21 @@
 function fish_right_prompt 
-	set -l exit_code $status
+  set -l exit_code $status
+  set -l cmd_duration $CMD_DURATION
   __tmux_prompt
   if test $exit_code -ne 0
     set_color red
   else
-    set_color 666666
+    set_color green
   end
   printf '%d' $exit_code
-  set_color 666666
-  # NOTE: ipatch, date is/was taking up too much space
+  if test $cmd_duration -ge 5000
+    set_color brcyan
+  else
+    set_color blue
+  end
+  printf ' (%s)' (__print_duration $cmd_duration)
+  # set_color 666666
+  # NOTE: ipatch, date taking too much space
   # printf ' < %s' (date +%H:%M:%S)
   set_color normal
 end
@@ -32,7 +39,7 @@ function __tmux_prompt
 end
 
 function _get_tmux_window
-  tmux lsw | grep active | sed 's/\*.*$//g;s/: / /1' | awk '{ print $2 "-" $1 }' -
+  # tmux lsw | grep active | sed 's/\*.*$//g;s/: / /1' | awk '{ print $2 "-" $1 }' -
 end
 
 function _get_screen_window
@@ -54,4 +61,27 @@ function _is_multiplexed
   echo $multiplexer
 end
 
+function __print_duration
+  set -l duration $argv[1]
+ 
+  set -l millis  (math $duration % 1000)
+  set -l seconds (math -s0 $duration / 1000 % 60)
+  set -l minutes (math -s0 $duration / 60000 % 60)
+  set -l hours   (math -s0 $duration / 3600000 % 60)
+ 
+  if test $duration -lt 60000;
+    # Below a minute
+    printf "%d.%03ds\n" $seconds $millis
+  else if test $duration -lt 3600000;
+    # Below a hour
+    printf "%02d:%02d.%03d\n" $minutes $seconds $millis
+  else
+    # Everything else
+    printf "%02d:%02d:%02d.%03d\n" $hours $minutes $seconds $millis
+  end
+end
+
+function _convertsecs
+  printf "%02d:%02d:%02d\n" (math -s0 $argv[1] / 3600) (math -s0 (math $argv[1] \% 3600) / 60) (math -s0 $argv[1] \% 60)
+end
 

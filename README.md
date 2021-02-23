@@ -5,24 +5,41 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
 
-## Screenshot
+<a id="featurecast"></a>
 
-![fish-shell-lambda-theme](https://raw.githubusercontent.com/ipatch/theme-lambda/master/lib/fish-shell-lambda-theme.png)
+## Featurecast 🎥
 
-## Virtualenv
+[![asciicast](https://asciinema.org/a/211469.svg)](https://asciinema.org/a/211469)
 
-![fish-shell-lambda-theme-virtualenv](https://raw.githubusercontent.com/ipatch/theme-lambda/master/lib/virtualenv.png)
+## Gif
+
+<details>
+<summary>An animated GIF deoming some of the features provided by this theme</summary>
+<img src="https://i.imgur.com/qgKd2HV.gif" width="640">
+</details>
+<br>
+<br>
 
 > To avoid [double printing](https://raw.githubusercontent.com/ipatch/theme-lambda/master/lib/virtualenv-double-prompt.png) of the virtualenv name in prompt add the below to `config.fish`
 
-```fish
+```shell
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 ```
 
+<a id="install"></a>
+
 ## Install
+
+<a id="install-omf"></a>
 
 ### [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish)
 
-```fish
+```shell
 omf install neolambda
 ```
+
+## TODOs
+
+- [ ] experiment with creating an animated svg to replace / complement the animaged gif
+
+  `cat myrecrod.cast | svg-term --out myrecord.svg --window`
