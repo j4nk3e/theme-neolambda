@@ -8,7 +8,8 @@ function fish_right_prompt
   end
   printf '%d' $exit_code
   set_color 666666
-  printf ' < %s' (date +%H:%M:%S)
+  # NOTE: ipatch, date is/was taking up too much space
+  # printf ' < %s' (date +%H:%M:%S)
   set_color normal
 end
 
