@@ -1,6 +1,9 @@
 # NeoLambda
 
-> The unofficial fork of the [omf](https://github.com/oh-my-fish/oh-my-fish) [lambda](https://github.com/hasanozgan/theme-lambda) theme
+> The unofficial fork of the [omf][lnk1] [lambda][lnk2] theme
+
+[lnk1]: <https://github.com/oh-my-fish/oh-my-fish>
+[lnk2]: <https://github.com/hasanozgan/theme-lambda>
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
@@ -40,6 +43,7 @@ omf install neolambda
 
 ## TODOs
 
+- [ ] look into creating project based icons, ie. replace `λ` with a green box if inside a node project, ie. if the shell/theme detects a `package.json` file. 
 - [ ] experiment with creating an animated svg to replace / complement the animaged gif
 
   `cat myrecrod.cast | svg-term --out myrecord.svg --window`
