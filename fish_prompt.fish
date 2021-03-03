@@ -56,19 +56,19 @@ function fish_prompt
 
   if [ (id -u) -eq 0 ]
     # top line > Superuser
-    echo -n $red'-'$hotpink$USER $white$location $__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
+    echo -n $red'╭─'$hotpink$USER $white$location $__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
     echo
     # bottom line > Superuser
-    echo -n $red'-'
-    echo -n $red'-'$__fish_prompt_char $normal
+    echo -n $red'╰'
+    echo -n $red'─'$__fish_prompt_char $normal
   else # top line > non superuser's
-    echo -n $white'-'$hotpink$USER $white$location $__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
+    echo -n $white'╭─'$hotpink$USER $white$location $__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
     echo
     # bottom line > non superuser's
-    echo -n $white'-'
-    echo -n $white'-'$__fish_prompt_char $normal
+    echo -n $white'╰'
+    echo -n $white'─'$__fish_prompt_char $normal
   end
   
   # NOTE: disable `VIRTUAL_ENV_DISABLE_PROMPT` in `config.fish`
