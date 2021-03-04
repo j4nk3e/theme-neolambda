@@ -23,7 +23,10 @@ function fish_prompt
   set -g __fish_git_prompt_showdirtystate true
   set -g __fish_git_prompt_showuntrackedfiles true
   set -g __fish_git_prompt_showstashstate true
-  set -g __fish_git_prompt_show_informative_status true 
+
+  # FIXME: below var causes rendering issues with fish v3.2.0
+  # set -g __fish_git_prompt_show_informative_status true 
+
 
   # Only calculate once, to save a few CPU cycles when displaying the prompt
   if not set -q __fish_prompt_hostname
