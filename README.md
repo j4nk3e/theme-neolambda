@@ -44,6 +44,8 @@ omf install neolambda
 ## TODOs
 
 - [ ] look into creating project based icons, ie. replace `λ` with a green box if inside a node project, ie. if the shell/theme detects a `package.json` file. 
+- [ ] use command+right-arrow to toggle the display of the `fish_right_prompt.fish`
+    - or possible control+\
 - [ ] experiment with creating an animated svg to replace / complement the animaged gif
 
   `cat myrecrod.cast | svg-term --out myrecord.svg --window`
