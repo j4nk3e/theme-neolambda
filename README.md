@@ -38,8 +38,15 @@ set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 ### [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish)
 
 ```shell
+echo "install omf first"
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
 omf install neolambda
 ```
+
+## Testing new features
+
+the quickest way i found to test a PR or feature is to pull in a docker container, for my use case `archlinux` and then install `which`, and `git` using pacman followed by omf and this theme `neolambda`.
 
 ## TODOs
 
@@ -47,5 +54,4 @@ omf install neolambda
 - [ ] use command+right-arrow to toggle the display of the `fish_right_prompt.fish`
     - or possible control+\
 - [ ] experiment with creating an animated svg to replace / complement the animaged gif
-
   `cat myrecrod.cast | svg-term --out myrecord.svg --window`
