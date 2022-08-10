@@ -53,5 +53,6 @@ the quickest way i found to test a PR or feature is to pull in a docker containe
 - [ ] look into creating project based icons, ie. replace `λ` with a green box if inside a node project, ie. if the shell/theme detects a `package.json` file. 
 - [ ] use command+right-arrow to toggle the display of the `fish_right_prompt.fish`
     - or possible control+\
-- [ ] experiment with creating an animated svg to replace / complement the animaged gif
+- [ ] experiment with creating an animated svg to replace / complement the animated gif
   `cat myrecrod.cast | svg-term --out myrecord.svg --window`
+- [ ] when working with subshells add a super/sub script to the `λ` to aid in knowing which subshell _one_ is working in 
