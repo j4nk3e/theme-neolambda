@@ -50,6 +50,9 @@ the quickest way i found to test a PR or feature is to pull in a docker containe
 
 ## TODOs
 
+<a name="todos"></a>
+
+- [ ] when working with cmake based projects and out of source build dirs it'd be nice to print the current git branch within the build dir for managing multi build dirs and git forks with branches
 - [ ] look into creating project based icons, ie. replace `λ` with a green box if inside a node project, ie. if the shell/theme detects a `package.json` file. 
 - [ ] use command+right-arrow to toggle the display of the `fish_right_prompt.fish`
     - or possible control+\
