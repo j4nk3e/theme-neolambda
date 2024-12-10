@@ -13,6 +13,7 @@ function fish_prompt
   set -l limegreen (set_color 87ff00)
   set -l purple (set_color af5fff)
   set -l red (set_color e70e0e)
+  set -l invert (set_color normal -b 500042)
 
   # Configure __fish_git_prompt
   set -g __fish_git_prompt_char_stateseparator ' '
@@ -66,11 +67,12 @@ function fish_prompt
     echo -n $red'╰'
     echo -n $red'─'$__fish_prompt_char $normal
   else # top line > non superuser's
+    set -l background (set_color -b 505050)
     echo -n $white'╭─'$hotpink$USER $white$location $__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
     __fish_git_prompt " (%s)"
-    echo
+    echo ' '$invert
     # bottom line > non superuser's
-    echo -n $white'╰'
+    echo -n $normal$white'╰'
     echo -n $white'─'$__fish_prompt_char $normal
   end
   
